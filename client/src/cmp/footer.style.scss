@@ -1,0 +1,27 @@
+.footer {
+    height: 600px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+
+    background-color: #08347d;
+
+    .signup {
+        font: bold 12px/1 "helvetica neue", helvetica, arial, sans-serif;
+        padding: 8px 0 9px;
+        text-align: center;
+        border: none !important;
+        border-bottom: 2px solid rgb(0, 168, 208) !important;
+        background: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        width: auto !important;
+        text-shadow: none !important;
+        color: #FFF !important;
+        cursor: pointer;
+    }
+
+    * {
+        color: white;
+    }
+}

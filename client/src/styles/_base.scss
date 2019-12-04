@@ -1,0 +1,90 @@
+:root {
+  --color-primary: rgb(61, 63, 88);
+  --color-primary-light: rgb(103, 107, 148);
+  --color-primary-dark: rgb(40, 41, 58);
+
+  --color-text: #425a70;
+  --color-menu-active: rgba(0, 112, 224, 0.6);
+
+  --color-grey-light-1: #faf9f9;
+  --color-grey-light-2: #f4f2f2;
+  --color-grey-light-3: #f0eeee;
+  --color-grey-light-4: #ccc;
+
+  --color-grey-dark-1: #333;
+  --color-grey-dark-2: #777;
+  --color-grey-dark-3: #999;
+
+  --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
+
+  --line: 1px solid var(--color-grey-light-2);
+}
+
+$secondary-color: #26a69a;
+
+$bp-largest: 100em; //   -Big monitor
+$bp-large: 85em; // 1100px   -Laptop
+$bp-medium: 80em; // 900px   -Tablet landscape
+$bp-small: 50em; // 600px     -Tablet portrait
+$bp-smallest: 31.25em; // 500px -Phone
+
+$medium-and-up: "only screen and (min-width : #{$bp-small})" !default;
+$large-and-up: "only screen and (min-width : #{$bp-medium})" !default;
+$extra-large-and-up: "only screen and (min-width : #{$bp-largest})" !default;
+$small-and-down: "only screen and (max-width : #{$bp-small})" !default;
+$medium-and-down: "only screen and (max-width : #{$bp-medium})" !default;
+$medium-only: "only screen and (min-width : #{$bp-small}) and (max-width : #{$bp-medium})" !default;
+$small-only: "only screen and (min-width : #{$bp-smallest}) and (max-width : #{$bp-small})" !default;
+
+
+// 12. Grid
+// ==========================================================================
+
+$num-cols: 12 !default;
+$gutter-width: 1.5rem !default;
+$element-top-margin: $gutter-width/3 !default;
+$element-bottom-margin: ($gutter-width * 2)/3 !default;
+
+// 20. Typography
+// ==========================================================================
+
+$font-stack: -apple-system,
+BlinkMacSystemFont,
+"Segoe UI",
+Roboto,
+Oxygen-Sans,
+Ubuntu,
+Cantarell,
+"Helvetica Neue",
+sans-serif !default;
+$off-black: rgba(0, 0, 0, 0.87) !default;
+// Header Styles
+$h1-fontsize: 4.2rem !default;
+$h2-fontsize: 3.56rem !default;
+$h3-fontsize: 2.92rem !default;
+$h4-fontsize: 2.28rem !default;
+$h5-fontsize: 1.64rem !default;
+$h6-fontsize: 1.15rem !default;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px, 10px/16px = 62.5%
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;
+  }
+}
+
+ 

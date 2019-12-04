@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+.box-szg_border-box {
+  margin-bottom: 0px !important;
+}
+
+@import "./_base";
+@import "./_global";
+@import "./_layout";
+@import "./_grid";
+@import "./_util";
+@import "../cmp/fields/fields.style.scss";
+
+* {
+  color: white;
+}
+
+.blue-bck {
+  background: #091E42;
+  background-image: url('./images/bck.svg');
+  background-size: 100% auto;
+  background-position: 0px 0px;
+  background-repeat: repeat-y;
+  transition: .1s ease;
+  transform: translate3d(0, 0, 0);
+}
+
+.learn-more {
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.6rem;
+  letter-spacing: 1.3px;
+  line-height: 1.5;
+  border: 1px solid #FFF;
+  padding: 5px 3%;
+  color: white;
+}
+
+.epic-title-container {
+  transition-timing-function: cubic-bezier(.25, .25, .75, .75);
+  transition-duration: 1s;
+  overflow: hidden;
+
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 16px;
+  padding: 32px;
+
+  p {
+    font-size: 3rem;
+  }
+
+  .epic-title {
+    color: white;
+  }
+
+  hr {
+    background: #00C7E5;
+    height: 4px;
+    width: 140px;
+    margin: 15px 0;
+    animation: WipeBarAnimation 1.8s linear forwards;
+  }
+}

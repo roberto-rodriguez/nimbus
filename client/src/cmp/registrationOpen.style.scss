@@ -1,0 +1,23 @@
+.registration-open {
+    background-image: url(../styles/images/colored_section.png);
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 0;
+    height: 230px;
+    display: block;
+
+    p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 5rem;
+        font-weight: 300;
+        color: white;
+        text-align: center;
+
+        span {
+            font-weight: 700;
+        }
+    }
+}

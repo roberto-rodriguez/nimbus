@@ -1,0 +1,9 @@
+node_modules
+package-lock.json
+client/node_modules
+client/package-lock.json
+config/dev.js 
+.idea
+*.crt
+*.key
+.vscode

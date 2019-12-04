@@ -1,0 +1,38 @@
+.location {
+
+    margin-top: 8rem;
+    color: white;
+    transition-timing-function: cubic-bezier(.25, .25, .75, .75);
+    transition-duration: 1s;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+
+    overflow: hidden;
+
+    h2 {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.33333333;
+        margin-bottom: 1.4rem;
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+
+    p {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 2.5rem;
+        margin-bottom: 2.4rem;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    a {
+        color: #00C7E5;
+        text-decoration: none;
+        vertical-align: baseline;
+        font-size: 1.8rem;
+    }
+}

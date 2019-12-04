@@ -1,0 +1,308 @@
+.s-border-bottom {
+    border-bottom: 1px solid rgba(1, 1, 1, 0.1);
+}
+
+.border-radius-1 {
+    border-radius: 1rem !important;
+}
+
+.border-radius-bottom {
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.white-bck {
+    background-color: white !important;
+}
+
+.pink-bck {
+    background-color: pink !important;
+}
+
+.full-size {
+    height: 100% !important;
+    width: 100% !important;
+}
+
+.w100 {
+    width: 100% !important;
+}
+
+.h100 {
+    height: 100% !important;
+    min-height: 100% !important;
+}
+
+.h100-70 {
+    height: calc(100% - 7rem) !important;
+}
+
+.pt70 {
+    padding-top: 7rem !important;
+}
+
+.display-flex {
+    display: flex !important;
+}
+
+.mts {
+    margin-top: 1rem !important;
+}
+
+.mtm {
+    margin-top: 2rem !important;
+}
+
+.mtl {
+    margin-top: 4rem !important;
+}
+
+.mtxl {
+    margin-top: 8rem !important;
+}
+
+
+.mrs {
+    margin-right: 1rem !important;
+}
+
+.mrm {
+    margin-right: 2rem !important;
+}
+
+.mrl {
+    margin-right: 4rem !important;
+}
+
+.mrxl {
+    margin-right: 5rem !important;
+}
+
+
+.mls {
+    margin-left: 1rem !important;
+}
+
+.mlm {
+    margin-left: 2rem !important;
+}
+
+.mll {
+    margin-left: 4rem !important;
+}
+
+.mbs {
+    margin-bottom: 1rem !important;
+}
+
+.mb0 {
+    margin-bottom: 0rem !important;
+}
+
+.mbm {
+    margin-bottom: 2rem !important;
+}
+
+.mbl {
+    margin-bottom: 4rem !important;
+}
+
+.m0 {
+    margin: 0px !important;
+}
+
+.p0 {
+    padding: 0px !important;
+}
+
+.pls {
+    padding-left: 1rem !important;
+}
+
+.plm {
+    padding-left: 2rem !important;
+}
+
+.pll {
+    padding-left: 4rem !important;
+}
+
+
+.pts {
+    padding-top: 1rem !important;
+}
+
+.ptm {
+    padding-top: 2rem !important;
+}
+
+.ptl {
+    padding-top: 4rem !important;
+}
+
+.ptxl {
+    padding-top: 8rem !important;
+}
+
+.pbs {
+    padding-bottom: 1rem !important;
+}
+
+.pbm {
+    padding-bottom: 2rem !important;
+}
+
+.pbl {
+    padding-bottom: 4rem !important;
+}
+
+.pbxl {
+    padding-bottom: 8rem !important;
+}
+
+
+
+
+.padding-small {
+    padding: 1rem !important;
+}
+
+.padding-medium {
+    padding: 2rem !important;
+}
+
+.padding-large {
+    padding: 3rem !important;
+}
+
+//--------- FLOAT
+.float-left {
+    float: left !important;
+}
+
+.float-right {
+    float: right !important;
+}
+
+.space-between {
+    justify-content: space-between !important;
+}
+
+//----- Centered
+
+.centered {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center;
+    text-align: center !important;
+}
+
+.in-line {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.in-column {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+
+/*********************
+  Media Query Classes
+**********************/
+.hide-on-small-only,
+.hide-on-small-and-down {
+    @media #{$small-and-down} {
+        display: none !important;
+    }
+}
+
+.hide-on-med-and-down {
+    @media #{$medium-and-down} {
+        display: none !important;
+    }
+}
+
+.hide-on-med-and-up {
+    @media #{$medium-and-up} {
+        display: none !important;
+    }
+}
+
+.hide-on-med-only {
+    @media only screen and (min-width: $bp-smallest) and (max-width: $bp-medium) {
+        display: none !important;
+    }
+}
+
+.hide-on-large-only {
+    @media #{$large-and-up} {
+        display: none !important;
+    }
+}
+
+.hide-on-extra-large-only {
+    @media #{$extra-large-and-up} {
+        display: none !important;
+    }
+}
+
+.show-on-extra-large {
+    @media #{$extra-large-and-up} {
+        display: block !important;
+    }
+}
+
+.show-on-large {
+    @media #{$large-and-up} {
+        display: block !important;
+    }
+}
+
+.show-on-medium {
+    @media only screen and (min-width: $bp-small) and (max-width: $bp-medium) {
+        display: block !important;
+    }
+}
+
+.show-on-small {
+    @media #{$small-and-down} {
+        display: block !important;
+    }
+}
+
+.show-on-medium-and-up {
+    @media #{$medium-and-up} {
+        display: block !important;
+    }
+}
+
+.show-on-medium-and-down {
+    @media #{$medium-and-down} {
+        display: block !important;
+    }
+}
+
+// Center text on mobile
+.center-on-small-only {
+    @media #{$small-and-down} {
+        text-align: center;
+    }
+}
+
+.w40rem {
+    width: 40rem;
+}

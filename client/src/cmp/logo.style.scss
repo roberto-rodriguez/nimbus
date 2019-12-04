@@ -1,0 +1,22 @@
+.logo {
+    padding-top: 10px;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: left;
+
+    &__top {
+        font-family: 'Aclonica', sans-serif;
+        color: white;
+        font-size: 2.5rem;
+        letter-spacing: 3px;
+        line-height: 1rem;
+    }
+
+    &__middle {
+        font-family: 'Black Ops One', cursive;
+        color: white;
+        font-size: 3rem;
+    }
+}

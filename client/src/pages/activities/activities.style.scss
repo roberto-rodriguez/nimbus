@@ -1,0 +1,33 @@
+.activity {
+
+    * {
+        color: white;
+    }
+
+    padding: 10rem 0px;
+
+    &__title {
+        font-size: 3.5rem;
+    }
+
+    &__sub-title {
+        font-size: 3rem;
+    }
+
+    &__body {
+        background-image: url('../../styles/images/animatedrule.gif');
+        background-size: 100% auto;
+        background-position: 0px 0px;
+        background-repeat: no-repeat;
+        padding-top: 1px !important;
+    }
+
+    b {
+        font-size: 1.4rem;
+    }
+
+
+    img {
+        width: 100%;
+    }
+}

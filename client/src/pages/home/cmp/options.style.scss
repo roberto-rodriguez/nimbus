@@ -1,0 +1,39 @@
+.options {
+
+    font-size: 1.6rem;
+
+
+    padding-top: 40px;
+
+    .row {
+
+        div {
+
+            .option {
+                padding: 2rem;
+                color: white;
+            }
+        }
+    }
+}
+
+.view-full-schedule {
+    display: inline;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.6rem;
+    letter-spacing: 1.3px;
+    line-height: 1.5;
+    border: 1px solid #FFF;
+    color: white;
+    text-align: center;
+    padding: 5px 3%;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    pointer-events: auto;
+    background-color: transparent;
+    font-family: Ember, Arial, Helvetica, sans-serif;
+}
+

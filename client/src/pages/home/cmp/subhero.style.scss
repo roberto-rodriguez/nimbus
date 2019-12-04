@@ -1,0 +1,26 @@
+.sub-hero {
+    font-family: 'Open Sans', sans-serif;
+    background: #FF5630;
+    background: linear-gradient(40deg, #FF5630, #0049B0, #FF5630, #0049B0, #FF5630, #0049B0);
+    background-size: 400% 400%;
+    animation: GradiationAnimation 20s ease infinite;
+    box-shadow: 0 10px 14px rgba(0, 0, 0, .1);
+    position: relative;
+    z-index: 2;
+    padding: 3rem 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin: 0px !important;
+
+    * {
+        color: white;
+        font-size: 2rem;
+    }
+
+    h4 {
+        font-style: normal;
+        font-family: 'Open Sans', sans-serif;
+        color: white;
+    }
+
+}

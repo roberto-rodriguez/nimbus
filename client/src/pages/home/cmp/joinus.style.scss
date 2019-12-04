@@ -1,0 +1,49 @@
+.joinus {
+
+    padding: 10rem 0px;
+
+
+
+    &__inner {
+        background-image: url('../../../styles/images/animatedrule.gif');
+        background-size: 100% auto;
+        background-position: 0px 0px;
+        background-repeat: no-repeat;
+
+    }
+
+
+
+    &__img {
+        height: 15px;
+        width: 100%;
+    }
+
+    &__left {
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 4rem;
+            color: #091E42;
+            margin-bottom: 2rem;
+        }
+
+        a {
+            font-family: 'Open Sans', sans-serif;
+
+            text-transform: uppercase;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 18px;
+            letter-spacing: 1.3px;
+            line-height: 1.5;
+            border: 3px solid #091E42;
+            text-align: center;
+            padding: 5px 3%;
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+}
