@@ -1,18 +1,13 @@
 import React, { Component } from "react";
 
 import "./register-now.style.scss";
-
+import { Link } from "react-router-dom";
 class RegisterNow extends Component {
   render() {
     return (
-      <a
-        class="register-now"
-        href="https://www.portal.reinvent.awsevents.com/portal/newreg.ww?trk=www.google.com,direct"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <Link to="/register" class="register-now">
         Register Now
-      </a>
+      </Link>
     );
   }
 }
