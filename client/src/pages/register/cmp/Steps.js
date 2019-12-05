@@ -9,16 +9,20 @@ const steps = [
 
 class Steps extends Component {
   render() {
-    const { image, title, date, time, location, text } = this.props;
+    const { page } = this.props;
 
     return (
       <div className="row steps ptl pbl mb0">
         <div className="col l8 offset-l2 s10 offset-s1 ">
           <ul className="steps w100">
             {steps.map(({ number, title }, i) => (
-              <li>
-                <div className="step">
-                  <span className="number">{number}</span>
+              <li key={i}>
+                <div className={"step " + (number === page ? "step-selected" : "")}>
+                  <span
+                    className={"number"}
+                  >
+                    {number}
+                  </span>
                   <span className="desc">{title}</span>
                 </div>
               </li>

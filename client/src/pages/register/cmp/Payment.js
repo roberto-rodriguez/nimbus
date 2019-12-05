@@ -5,11 +5,17 @@ const stripeImg = require("../images/powered-stripe.png");
 
 class Payment extends Component {
   onToken = async token => {
-    var tok = token.id;
-    debugger;
+    const { onNext, onBack, onChange } = this.props;
+
+    onChange("token", token.id);
+    onNext();
   };
 
   render() {
+    const { onBack, data } = this.props;
+    const pck = data.package;
+    var total = data.passes * pck.price;
+
     return (
       <div>
         <div className="row ptl pbm mb0">
@@ -30,19 +36,19 @@ class Payment extends Component {
               <div className="row mb0 pts">
                 <div className="col s4">Selection:</div>
                 <div className="col s8" style={{ fontStyle: "italic" }}>
-                  Summit All-Access Pass Large Team Bundle
+                  {pck.title}
                 </div>
               </div>
               <div className="row mb0 pts">
                 <div className="col s4">Price:</div>
                 <div className="col s8" style={{ fontStyle: "italic" }}>
-                  <b style={{ color: "#c0b6f2" }}>$475</b> per pass
+                  <b style={{ color: "#c0b6f2" }}>${pck.price}</b> per pass
                 </div>
               </div>
               <div className="row mb0 pts mbm">
                 <div className="col s4">Number of passes:</div>
                 <div className="col s8" style={{ fontStyle: "italic" }}>
-                  <b>1</b>
+                  <b>{data.passes}</b>
                 </div>
               </div>
               <div className="row mb0 pts">
@@ -50,7 +56,7 @@ class Payment extends Component {
                   Total:
                 </div>
                 <div className="col s8" style={{ fontStyle: "italic" }}>
-                  <b style={{ color: "#c0b6f2" }}>$475</b>
+                  <b style={{ color: "#c0b6f2" }}>${total}</b>
                 </div>
               </div>
               <br />
@@ -61,7 +67,7 @@ class Payment extends Component {
                   description="Summit 2020"
                   image="http://www.vodafone.ie/images/vf-logo.png"
                   panelLabel="Make Payment"
-                  amount={100}
+                  amount={total * 100}
                   currency="USD"
                   stripeKey="pk_test_QHyPCy2LOAADaISpd83bIYXL00rZX975gL"
                   billingAddress={true}
@@ -80,7 +86,7 @@ class Payment extends Component {
         </div>
         <div className="row ptl pbl mb0">
           <div className="col s6 offset-s1 offset-m2">
-            <button class="btn-standard float-left">
+            <button class="btn-standard float-left" onClick={onBack}>
               <span>← Back</span>
             </button>
           </div>

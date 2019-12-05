@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 class TextField extends Component {
   render() {
-    var { name, label, onChange } = this.props;
+    var { name, label, onChange, value, type } = this.props;
 
     return (
       <div className="row text-field ptm">
@@ -10,7 +10,11 @@ class TextField extends Component {
           <label>{label}</label>
         </div>
         <div className="col s12 m6">
-          <input type="text" onChange={e => onChange(name, e.target.value)} />
+          <input
+            type={type || "text"}
+            onChange={e => onChange(name, e.target.value)}
+            value={value}
+          />
         </div>
       </div>
     );

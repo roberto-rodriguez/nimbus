@@ -4,19 +4,20 @@ import { TextField } from "../../../cmp/";
 const fields = [
   { name: "firstName", label: "First Name" },
   { name: "lastName", label: "Last Name" },
-  { name: "businessName", label: "Business Name" },
-  { name: "email", label: "Email Address" }
+  { name: "email", label: "Email Address" },
+  { name: "phone", label: "Phone Number" },
+  { name: "businessName", label: "Company Name" }
 ];
 
 const login = [
   { name: "username", label: "User Name" },
-  { name: "password", label: "Password" },
-  { name: "repassword", label: "Retype password" }
+  { name: "password", label: "Password", type: "password" },
+  { name: "repassword", label: "Retype password", type: "password" }
 ];
 
 class Contact extends Component {
   render() {
-    const { image, title, date, time, location, text } = this.props;
+    const { onNext, onChange, data } = this.props;
 
     return (
       <div>
@@ -29,7 +30,13 @@ class Contact extends Component {
               <hr />
             </div>
             {fields.map(({ name, label }, i) => (
-              <TextField name={name} label={label} key={i} />
+              <TextField
+                name={name}
+                label={label}
+                key={i}
+                onChange={onChange}
+                value={data[name]}
+              />
             ))}
             <br />
             <br />
@@ -39,16 +46,25 @@ class Contact extends Component {
               </div>
               <hr />
             </div>
-            {login.map(({ name, label }, i) => (
-              <TextField name={name} label={label} key={i} />
+            {login.map(({ name, label, type }, i) => (
+              <TextField
+                name={name}
+                label={label}
+                key={i}
+                onChange={onChange}
+                value={data[name]}
+                type={type}
+              />
             ))}
           </div>
         </div>
         <div className="row ptl pbl mb0">
           <div className="col l8 offset-l2 s10 offset-s1 ">
-            <button class="btn-standard float-right">
-              <span>Next →</span>
-            </button>
+            <div className="col s6 offset-s6">
+              <button className="btn-standard float-left" onClick={onNext}>
+                <span>Next →</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
