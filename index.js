@@ -28,4 +28,5 @@ require("./server/routes/auth.routes")(app);
 require("./server/routes/cards.routes")(app);
 require("./server/routes/stripe.routes")(app);
 
-app.listen(5000);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT);
