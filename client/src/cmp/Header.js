@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Logo } from "./";
 import "./header.style.scss";
 import { Link } from "react-router-dom";
-
+import { connect } from "react-redux";
 class Header extends Component {
   render() {
     return (
@@ -34,15 +34,6 @@ class Header extends Component {
                 <li>
                   {" "}
                   <a
-                    href="/company/events/summit/attend"
-                    className="imkt-navbar__link-list-link"
-                  >
-                    Attend
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a
                     href="/company/events/summit/sponsors"
                     className="imkt-navbar__link-list-link"
                   >
@@ -52,11 +43,7 @@ class Header extends Component {
               </ul>
 
               <div className="imkt-navbar__right-nav">
-                {!this.props.hideRegister && (
-                  <Link to="register" className="register-button">
-                    Register now
-                  </Link>
-                )}
+                {this.buildAuthButton()}
               </div>
             </div>
           </div>
@@ -64,6 +51,38 @@ class Header extends Component {
       </nav>
     );
   }
+
+  buildAuthButton = () => {
+    const { hideRegister, userId, firstName, lastName } = this.props;
+
+    if (hideRegister) {
+      return null;
+    }
+
+    if (userId) {
+      return (
+        <p className="prl mrl" style={{ fontSize: "1.9rem" }}>
+          Welcome{" "}
+          <span style={{ color: "#00C7E5" }}>
+            {" "}
+            {` ${firstName} ${lastName}`}
+          </span>
+        </p>
+      );
+    } else {
+      return (
+        <Link to="register" className="register-button">
+          Register now
+        </Link>
+      );
+    }
+  };
 }
 
-export default Header;
+const mapStateToProps = ({ auth }) => ({
+  userId: auth.userId,
+  firstName: auth.firstName,
+  lastName: auth.lastName
+});
+
+export default connect(mapStateToProps)(Header);

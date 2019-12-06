@@ -1,14 +1,21 @@
 import React, { Component } from "react";
 import StripeCheckout from "react-stripe-checkout";
+import { connect } from "react-redux";
+import * as registrationActions from "../../../actions/registration.actions";
 
 const stripeImg = require("../images/powered-stripe.png");
 
 class Payment extends Component {
   onToken = async token => {
-    const { onNext, onBack, onChange } = this.props;
+    const { onNext, data, saveRegistration } = this.props;
 
-    onChange("token", token.id);
-    onNext();
+    saveRegistration(
+      {
+        ...data,
+        paymentToken: token.id
+      },
+      onNext
+    );
   };
 
   render() {
@@ -96,4 +103,4 @@ class Payment extends Component {
   }
 }
 
-export default Payment;
+export default connect(null, registrationActions)(Payment);

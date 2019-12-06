@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import * as registrationActions from "../../../actions/registration.actions";
 
 const packages = [
   {
@@ -36,6 +38,17 @@ const packages = [
 ];
 
 class Packages extends Component {
+  onSave = () => {
+    const { onNext, data, saveRegistration } = this.props;
+
+    saveRegistration(
+      {
+        ...data
+      },
+      onNext
+    );
+  };
+
   render() {
     const { onNext, onBack, onChange, data } = this.props;
     var pck = data.package;
@@ -105,7 +118,7 @@ class Packages extends Component {
           </div>
           <div className="col s6">
             {pck && (
-              <button class="btn-standard float-left" onClick={onNext}>
+              <button class="btn-standard float-left" onClick={this.onSave}>
                 <span>Next →</span>
               </button>
             )}
@@ -149,4 +162,4 @@ class Packages extends Component {
   );
 }
 
-export default Packages;
+export default connect(null, registrationActions)(Packages);

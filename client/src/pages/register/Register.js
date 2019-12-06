@@ -27,7 +27,6 @@ class Register extends Component {
   onNext = () => this.onPageChange(1);
   onBack = () => this.onPageChange(-1);
   onPageChange = offset => {
-    debugger;
     this.setState({ page: this.state.page + offset });
     window.scrollTo(0, 0);
   };

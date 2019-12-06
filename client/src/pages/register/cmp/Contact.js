@@ -4,16 +4,18 @@ import { TextField } from "../../../cmp/";
 const fields = [
   { name: "firstName", label: "First Name" },
   { name: "lastName", label: "Last Name" },
-  { name: "email", label: "Email Address" },
+
   { name: "phone", label: "Phone Number" },
   { name: "businessName", label: "Company Name" }
 ];
 
 const login = [
-  { name: "username", label: "User Name" },
+  { name: "email", label: "Email Address" },
   { name: "password", label: "Password", type: "password" },
   { name: "repassword", label: "Retype password", type: "password" }
 ];
+
+const signupGoogle = require("../images/signup-google.png");
 
 class Contact extends Component {
   render() {
@@ -21,7 +23,7 @@ class Contact extends Component {
 
     return (
       <div>
-        <div className="row ptl pbl mb0">
+        <div className="row ptl mb0">
           <div className="col l8 offset-l2 s10 offset-s1 ">
             <div className="epic-title-container pbl">
               <div className="epic-title">
@@ -46,6 +48,10 @@ class Contact extends Component {
               </div>
               <hr />
             </div>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col s10 offset-s1 m6">
             {login.map(({ name, label, type }, i) => (
               <TextField
                 name={name}
@@ -54,8 +60,36 @@ class Contact extends Component {
                 onChange={onChange}
                 value={data[name]}
                 type={type}
+                labelClass="m6"
               />
             ))}
+          </div>
+          <div
+            className="col s12 m6 centered in-column"
+            style={{ height: 222 }}
+          >
+            <div className="in-line centered">
+              — &nbsp;&nbsp; OR &nbsp;&nbsp;—
+              <img
+                src={signupGoogle}
+                style={{ width: 250, maxWidth: "100%" }}
+              />
+            </div>
+            <p>
+              Already have an account?{"   "}
+              <a
+                href=""
+                style={{
+                  color: "white",
+                  borderBottom: "2px solid rgb(0, 168, 208)",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                  marginLeft: 10
+                }}
+              >
+                Sign In
+              </a>
+            </p>
           </div>
         </div>
         <div className="row ptl pbl mb0">
