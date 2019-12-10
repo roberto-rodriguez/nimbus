@@ -5,6 +5,7 @@ import * as registrationActions from "../../../actions/registration.actions";
 const packages = [
   {
     save: "SAVE $650 PER PASS NOW",
+    type: "allAccess",
     title: "Summit All-Access Pass",
     price: 750,
     standard: "Standard Rate: $1,400 per pass",
@@ -13,6 +14,7 @@ const packages = [
   },
   {
     save: "SAVE $500 PER PASS NOW",
+    type: "allAccess_smallTeam",
     title: "Summit All-Access Pass Small Team Bundle",
     price: 500,
     standard: "Standard Rate: $1,000 per pass",
@@ -22,6 +24,7 @@ const packages = [
   {
     save: "SAVE $475 PER PASS NOW",
     title: "Summit All-Access Pass Large Team Bundle",
+    type: "allAccess_largeTeam",
     price: 475,
     standard: "Standard Rate: $950 per pass",
     desc:
@@ -30,6 +33,7 @@ const packages = [
   {
     save: "SAVE $325 PER PASS NOW",
     title: "Teams & Practices Day Pass",
+    type: "dayPass",
     price: 375,
     standard: "Standard Rate: $700 per pass",
     desc:
@@ -128,7 +132,7 @@ class Packages extends Component {
     );
   }
 
-  buildPackage = ({ save, title, price, standard, desc }, i) => (
+  buildPackage = ({ save, title, price, standard, desc, type }, i) => (
     <div className="col s12 m3 padding-medium" key={i}>
       <div
         className={`padding-medium package ${
@@ -138,7 +142,7 @@ class Packages extends Component {
             ? "package_selected"
             : ""
         }`}
-        onClick={() => this.props.onChange("package", { title, price })}
+        onClick={() => this.props.onChange("package", { title, price, type })}
         style={{ border: "1px solid #00C7E6" }}
       >
         <p className="save">{save}</p>

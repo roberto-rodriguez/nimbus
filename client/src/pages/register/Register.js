@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Header, Footer } from "../../cmp";
-import { Steps, Contact, Packages, Payment, Confirmation } from "./cmp";
+import { Steps, AccountCreation, Packages, Payment, Confirmation } from "./cmp";
 import "./register.style.scss";
 
 class Register extends Component {
@@ -42,7 +42,7 @@ class Register extends Component {
     switch (page) {
       case 1:
         return (
-          <Contact
+          <AccountCreation
             onNext={this.onNext}
             onBack={this.onBack}
             onChange={this.onChange}

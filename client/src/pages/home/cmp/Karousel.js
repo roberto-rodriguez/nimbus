@@ -67,7 +67,7 @@ class Karousel extends Component {
   }
 
   buildView = ({ image, title, text }, i) => (
-    <div className={"k-step"}>
+    <div className={"k-step"} key={i}>
       <img src={image} />
       <br />
       <div className="row">
@@ -75,11 +75,7 @@ class Karousel extends Component {
           <h2>{title}</h2>
           <p>{text}</p>
           <br />
-          <a
-            className="learn-more"
-            href=""
-            target="_blank"
-          >
+          <a className="learn-more" href="" target="_blank">
             Learn More
           </a>
         </div>

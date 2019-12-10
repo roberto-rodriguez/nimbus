@@ -7,8 +7,8 @@ class Hero extends Component {
     return (
       <div>
         <div className="hero-video">
-          <div class="row mb0" style={{ opacity: 1 }}>
-            <div class="column">
+          <div className="row mb0" style={{ opacity: 1 }}>
+            <div className="column">
               <video id="background-video" loop autoPlay>
                 <source src={video} type="video/mp4" />
                 <source src={video} type="video/ogg" />

@@ -53,13 +53,11 @@ class Header extends Component {
   }
 
   buildAuthButton = () => {
-    const { hideRegister, userId, firstName, lastName } = this.props;
+    const { hideRegister, uid, firstName, lastName, authLoaded } = this.props;
 
-    if (hideRegister) {
-      return null;
-    }
-
-    if (userId) {
+    if (!authLoaded) return null;
+    
+    if (uid) {
       return (
         <p className="prl mrl" style={{ fontSize: "1.9rem" }}>
           Welcome{" "}
@@ -70,19 +68,22 @@ class Header extends Component {
         </p>
       );
     } else {
-      return (
-        <Link to="register" className="register-button">
-          Register now
-        </Link>
-      );
+      if (!hideRegister) {
+        return (
+          <Link to="register" className="register-button">
+            Register now
+          </Link>
+        );
+      }
     }
   };
 }
 
 const mapStateToProps = ({ auth }) => ({
-  userId: auth.userId,
+  uid: auth.uid,
   firstName: auth.firstName,
-  lastName: auth.lastName
+  lastName: auth.lastName,
+  authLoaded: auth.authLoaded
 });
 
 export default connect(mapStateToProps)(Header);

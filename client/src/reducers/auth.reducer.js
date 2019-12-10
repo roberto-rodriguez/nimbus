@@ -8,11 +8,14 @@ export default function authReducer(state = initialState, action) {
   const { type, data } = action;
 
   switch (type) {
-    case "USER_SET":
+    case "SET_AUTH":
       return {
         ...state,
-        ...data
+        ...data,
+        authLoaded: true
       };
+    case "LOG_OUT":
+      return {};
     default:
       return state;
   }

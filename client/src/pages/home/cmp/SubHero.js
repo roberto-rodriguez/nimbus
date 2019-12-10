@@ -17,7 +17,7 @@ class SubHero extends Component {
               innovative ways to work. Save $650 on your pass. Offer ends
               January 15. <br />
               <a
-                class="link-arrow"
+                className="link-arrow"
                 href="https://atlassian.swoogo.com/summit20"
                 target="_blank"
               >

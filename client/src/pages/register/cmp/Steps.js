@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 const steps = [
-  { number: 1, title: "Contact Information" },
+  { number: 1, title: "Create Account" },
   { number: 2, title: "Registration Packages" },
   { number: 3, title: "Payment Details" },
   { number: 4, title: "Confirmation" }
@@ -17,12 +17,10 @@ class Steps extends Component {
           <ul className="steps w100">
             {steps.map(({ number, title }, i) => (
               <li key={i}>
-                <div className={"step " + (number === page ? "step-selected" : "")}>
-                  <span
-                    className={"number"}
-                  >
-                    {number}
-                  </span>
+                <div
+                  className={"step " + (number === page ? "step-selected" : "")}
+                >
+                  <span className={"number"}>{number}</span>
                   <span className="desc">{title}</span>
                 </div>
               </li>

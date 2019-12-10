@@ -60,7 +60,6 @@
                 .desc {
                     margin-top: 10px;
                     display: block;
-
                     color: #777;
                     font-weight: 300;
                     box-sizing: border-box;
@@ -149,7 +148,7 @@
     &__title {
         font-size: 2rem;
         border-bottom: 1px solid #00C7E6;
-        padding-bottom: 10px; 
+        padding-bottom: 10px;
     }
 
     input {
@@ -206,4 +205,17 @@
     transition: all .2s ease-in-out;
     border-width: 0px;
     width: 230px;
+}
+
+.already-have-account {
+    width: 100%;
+    text-align: center;
+    font-size: 1.8rem;
+
+    span {
+        cursor: pointer;
+        color: rgb(0, 168, 208);
+        border-bottom: 2px solid rgb(0, 168, 208);
+        margin-left: 5px;
+    }
 }
