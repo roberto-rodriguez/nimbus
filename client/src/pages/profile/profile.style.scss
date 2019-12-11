@@ -1,0 +1,111 @@
+.tabs {
+    margin: 0px;
+    padding: 0px;
+
+    * {
+        color: white;
+    }
+
+    ul {
+
+        .step-selected {
+            border-bottom: 1px solid rgb(0, 199, 229);
+        }
+
+        li {
+            cursor: pointer;
+            width: auto;
+            display: block;
+            float: none;
+            font-family: 'Roboto', sans-serif;
+            letter-spacing: 1px;
+            font-size: 2rem;
+            box-sizing: border-box;
+            line-height: 1.45;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+            margin-left: 6rem;
+
+            .step {
+                background-color: transparent;
+                background-image: none;
+                filter: none;
+                border: 0;
+                box-shadow: none;
+                color: #777;
+                margin-bottom: 0;
+                text-align: center;
+                position: relative;
+                display: block;
+                font-size: 16px;
+
+
+
+                .number {
+                    color: #091E42;
+                    background-color: #eee;
+                    display: inline-block;
+                    text-align: center !important;
+
+                    font-weight: 300;
+                    padding: 11px 15px 13px 15px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    height: 45px;
+                    width: 45px;
+                    border-radius: 50% !important;
+                }
+
+                .desc {
+                    margin-top: 10px;
+                    display: block;
+                    color: #777;
+                    font-weight: 300;
+                    box-sizing: border-box;
+                }
+            }
+
+            .step-selected {
+                .number {
+                    font-weight: 600 !important;
+                }
+
+                .desc {
+                    color: white !important;
+                }
+            }
+        }
+    }
+
+
+
+
+}
+
+.registrations {
+    table {
+        tr {
+
+            th {
+                color: rgb(0, 199, 229);
+                font-size: 2rem;
+                text-align: left;
+                border-bottom: 1px solid rgba(0, 199, 229, 0.5);
+            }
+
+            td {
+                padding: 1rem 0px;
+                color: white;
+                font-size: 1.8rem;
+                text-align: left;
+
+            }
+
+            .update-row {
+                border: none !important;
+                color: rgb(0, 199, 229) !important;
+                cursor: pointer;
+            }
+        }
+    }
+}

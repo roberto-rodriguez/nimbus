@@ -3,11 +3,23 @@ import { firestore } from "./firebase.actions";
 import axios from "axios";
 
 export const listRegistrations = () => async (dispatch, getState) => {
-  const response = await axios.get("/registration/list");
+  var { auth, registrations } = getState();
 
-  var objList = objectUtil.listToObject(response.data);
+  if (!registrations.loaded) {
+    var snapshot = await firestore
+      .collection("/users/" + auth.uid + "/registrations")
+      .get();
 
-  dispatch({ type: "REGISTRATION_LIST", data: objList });
+    var data = {};
+
+    snapshot.docs.map(doc => {
+      var reg = doc.data();
+
+      data[reg.id] = { ...reg };
+    });
+
+    dispatch({ type: "REGISTRATION_LIST", data });
+  }
 };
 
 export const saveRegistration = (registrationData, callback) => async (
@@ -19,13 +31,16 @@ export const saveRegistration = (registrationData, callback) => async (
   const pck = registrationData.package;
   const { title, price, type } = pck;
 
+  var dateTime = new Date().getTime();
+
   var registration = {
-    id: new Date().getTime(),
+    id: dateTime,
+    dateTime,
     title,
     price,
     type,
     passes,
-    price: passes * price
+    amount: passes * price
   };
 
   try {

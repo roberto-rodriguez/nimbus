@@ -42,17 +42,6 @@ const packages = [
 ];
 
 class Packages extends Component {
-  onSave = () => {
-    const { onNext, data, saveRegistration } = this.props;
-
-    saveRegistration(
-      {
-        ...data
-      },
-      onNext
-    );
-  };
-
   render() {
     const { onNext, onBack, onChange, data } = this.props;
     var pck = data.package;
@@ -116,13 +105,13 @@ class Packages extends Component {
 
         <div className="row ptl pbl mb0">
           <div className="col s6">
-            <button class="btn-standard float-right" onClick={onBack}>
+            <button className="btn-standard float-right" onClick={onBack}>
               <span>← Back</span>
             </button>
           </div>
           <div className="col s6">
             {pck && (
-              <button class="btn-standard float-left" onClick={this.onSave}>
+              <button className="btn-standard float-left" onClick={onNext}>
                 <span>Next →</span>
               </button>
             )}

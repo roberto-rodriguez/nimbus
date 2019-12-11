@@ -4,7 +4,7 @@ import registrationReducer from "./registration.reducer";
 
 const rootReducer = combineReducers({
   auth: authReducer,
-  registrationReducer: registrationReducer
+  registrations: registrationReducer
 });
 
 export default rootReducer;

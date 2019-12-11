@@ -24,6 +24,7 @@ export const logIn = (authData, userData) => async dispatch =>
 
 export const logOut = () => async dispatch => {
   dispatch({ type: "LOG_OUT" });
+  dispatch({ type: "REGISTRATION_RESET" });
 };
 
 const buildUser = (authData, userData) => ({

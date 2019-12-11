@@ -1,8 +1,4 @@
-const initialState = {
-  // userId: 1,
-  // firstName: "Roberto",
-  // lastName: "Rodriguez"
-};
+const initialState = {};
 
 export default function authReducer(state = initialState, action) {
   const { type, data } = action;
@@ -15,7 +11,7 @@ export default function authReducer(state = initialState, action) {
         authLoaded: true
       };
     case "LOG_OUT":
-      return {};
+      return { authLoaded: true };
     default:
       return state;
   }

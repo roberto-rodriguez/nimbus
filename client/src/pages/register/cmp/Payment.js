@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import * as registrationActions from "../../../actions/registration.actions";
 
 const stripeImg = require("../images/powered-stripe.png");
-
+const stripeKey = process.env.REACT_APP_STRIPE_KEY;
 class Payment extends Component {
   onToken = async token => {
     const { onNext, data, saveRegistration } = this.props;
@@ -22,6 +22,9 @@ class Payment extends Component {
     const { onBack, data } = this.props;
     const pck = data.package;
     var total = data.passes * pck.price;
+
+    var k = stripeKey;
+    debugger;
 
     return (
       <div>
@@ -76,7 +79,7 @@ class Payment extends Component {
                   panelLabel="Make Payment"
                   amount={total * 100}
                   currency="USD"
-                  stripeKey="pk_test_QHyPCy2LOAADaISpd83bIYXL00rZX975gL"
+                  stripeKey={stripeKey}
                   billingAddress={true}
                   allowRememberMe
                   token={this.onToken}

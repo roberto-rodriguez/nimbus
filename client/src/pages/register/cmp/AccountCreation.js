@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { TextField } from "../../../cmp";
+import { Link } from "react-router-dom";
 import { auth, signInWithGoogle } from "../../../actions/firebase.actions";
 import * as authActions from "../../../actions/auth.actions";
 import { connect } from "react-redux";
@@ -24,8 +25,11 @@ class AccountCreation extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+    const { onNext } = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async authData => {
       this.props.signUp(authData, this.props.data, this.afterSignUp);
+
+      authData && onNext();
     });
   }
 
@@ -41,22 +45,16 @@ class AccountCreation extends Component {
         data.email,
         data.password
       );
-
-      onNext();
     } catch (error) {
-      debugger;
+      alert(error.message);
     }
   };
 
   onSignUpWithGoogle = async () => {
-    const { data, onNext } = this.props;
-
     try {
       signInWithGoogle();
-
-      onNext();
     } catch (error) {
-      debugger;
+      alert(error.message);
     }
   };
 
@@ -79,7 +77,7 @@ class AccountCreation extends Component {
                     auth.signOut();
                   }}
                 >
-                  Sign In
+                  <Link to="/login">Sign In</Link>
                 </span>
               </p>
             )}

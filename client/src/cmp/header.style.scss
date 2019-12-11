@@ -94,20 +94,47 @@ nav .imkt-navbar {
     background: 0 0;
 }
 
-.toggle-menu-button {
-    background-color: transparent;
-    display: block;
-    margin-left: 10px;
-    padding: 30px 10px;
-    outline: 0;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    border: none;
-    margin: 0;
-    padding: 0;
-    text-align: left;
-    text-indent: -999em;
-    vertical-align: text-bottom;
-    height: 16px;
-    width: 16px;
+
+.toggle-menu-wrapper {
+    cursor: pointer;
+
+    p {
+        font-size: 2rem;
+        margin-right: 3rem;
+        line-height: 50px;
+    }
+
+    ul {
+        list-style-type: none;
+        display: none;
+        transition: all .3s ease;
+        position: absolute;
+        top: 45px;
+        background-color: #1f2746;
+        border: 1px solid #0052CC;
+        width: 250px;
+        margin-top: 30px;
+        z-index: 1000;
+
+        li {
+            font-size: 1.8rem;
+            list-style-type: none;
+            width: 100%;
+            line-height: 25px;
+            padding: 10px 20px;
+
+
+            a {
+                color: white;
+            }
+        }
+
+        li:hover a {
+            color: #00C7E5 !important;
+        }
+    }
+}
+
+.toggle-menu-wrapper:hover ul {
+    display: block !important;
 }

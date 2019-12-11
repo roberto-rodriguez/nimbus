@@ -1,9 +1,19 @@
 import React, { Component } from "react";
 import { Logo } from "./";
 import "./header.style.scss";
-import { Link } from "react-router-dom";
+import { Link, NavLink, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
+import { auth } from "../actions/firebase.actions";
 class Header extends Component {
+  onLogout = () => {
+    const { history } = this.props;
+
+    auth.signOut();
+    if (history.location.pathname != "/") {
+      history.push("/");
+    }
+  };
+
   render() {
     return (
       <nav className="imkt-navbar">
@@ -11,36 +21,6 @@ class Header extends Component {
           <div className="row">
             <div className="column nav-comp-column">
               <Logo />
-
-              <ul className="imkt-navbar__link-list hide-on-small-and-down">
-                <li>
-                  {" "}
-                  <a
-                    href="/company/events/summit/about"
-                    className="imkt-navbar__link-list-link"
-                  >
-                    About
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="/company/events/summit/schedule"
-                    className="imkt-navbar__link-list-link"
-                  >
-                    Schedule
-                  </a>{" "}
-                </li>
-                <li>
-                  {" "}
-                  <a
-                    href="/company/events/summit/sponsors"
-                    className="imkt-navbar__link-list-link"
-                  >
-                    Sponsors
-                  </a>{" "}
-                </li>
-              </ul>
 
               <div className="imkt-navbar__right-nav">
                 {this.buildAuthButton()}
@@ -56,16 +36,20 @@ class Header extends Component {
     const { hideRegister, uid, firstName, lastName, authLoaded } = this.props;
 
     if (!authLoaded) return null;
-    
+
     if (uid) {
       return (
-        <p className="prl mrl" style={{ fontSize: "1.9rem" }}>
-          Welcome{" "}
-          <span style={{ color: "#00C7E5" }}>
-            {" "}
-            {` ${firstName} ${lastName}`}
-          </span>
-        </p>
+        <div className="toggle-menu-wrapper">
+          <p>{` ${firstName} ${lastName}`}</p>
+          <ul style={{ width: 200 }}>
+            <li>
+              <NavLink to="/profile">Profile</NavLink>
+            </li>
+            <li>
+              <span onClick={() => this.onLogout()}>Log Out</span>
+            </li>
+          </ul>
+        </div>
       );
     } else {
       if (!hideRegister) {
@@ -86,4 +70,4 @@ const mapStateToProps = ({ auth }) => ({
   authLoaded: auth.authLoaded
 });
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(withRouter(Header));

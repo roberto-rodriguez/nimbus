@@ -7,3 +7,4 @@ config/dev.js
 *.crt
 *.key
 .vscode
+.env.development
