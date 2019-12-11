@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./subhero.style.scss";
-
+import { NavLink } from "react-router-dom";
 class SubHero extends Component {
   render() {
     return (
@@ -16,13 +16,9 @@ class SubHero extends Component {
               Join us at the ultimate event for teams, by teams and explore
               innovative ways to work. Save $650 on your pass. Offer ends
               January 15. <br />
-              <a
-                className="link-arrow"
-                href="https://atlassian.swoogo.com/summit20"
-                target="_blank"
-              >
+              <NavLink to="/register" className="link-arrow">
                 Register now ⟶
-              </a>
+              </NavLink>
             </p>
           </div>
         </div>
